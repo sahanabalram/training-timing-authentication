@@ -1,0 +1,7 @@
+body{
+    background-image: url("../images/confectionary.png");
+    font-family: monospace;
+}
+.jumbotron {
+    background-color: tomato;
+}
