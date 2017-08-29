@@ -14,6 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/62f4e174f3.js"></script>
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="jumbotron">
@@ -22,8 +23,61 @@
                 <i class="fa fa-subway fa-5x fa-spin"></i>
             </div>
             <h2 class="text-center">Choo... Choo.. Choo..</h2>
-            
+        </div>
+
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel panel-heading">Current Train Status</div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover  table-responsive">
+                        <thead>
+                            <tr>
+                                <td>Train Name</td>
+                                <td>Destination</td>
+                                <td>Frequency (mins)</td>
+                                <td>Next Arrival</td>
+                                <td>Minutes Away</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel panel-heading">Choo... Choo... Away!!!</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="control-label" for="add-train">Train Name</label>
+                            <input class="form-control" id="add-train" type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="add-destination">Destination</label>
+                            <input class="form-control" id="add-destination" type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="add-train-time">Train Time(HH:mm - military time)</label>
+                            <input type="text" class="form-control" id="add-train-time">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="add-frequency">Frequency (min)</label>
+                            <input type="text" class="form-control" id="iadd-frequency">
+                        </div>
+
+                        <div>
+                            <button class="btn btn-primary" id="add">Submit</button>
+                        </div>
+
+                    </div>
+                
+            </div>
         </div>
     </div>
 </body>
+
 </html>
