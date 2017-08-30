@@ -18,7 +18,7 @@ function authenticate() {
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
-        alert(user);
+        console.log(user);
         // ...
         // Create Firebase event for adding train to the database and a row in the html when a user adds an entry
         database.ref().on("child_added", function (childSnapShot, prevChildKey) {
