@@ -29,6 +29,22 @@ function authenticate() {
             var trainTime = childSnapShot.val().time;
             var trainFrequency = childSnapShot.val().frequency;
 
+            // time calculation           
+            var beginTime = childSnapShot.val().trainTime;
+            var beginTimeFormat = moment(beginTime, "HH:mm");
+            var currentTime = moment();
+            // difference in time
+            var differenceTime = moment().diff(moment(beginTimeFormat), "minutes");
+            console.log(differenceTime);
+            var timeApart = differenceTime % trainFrequency;
+
+            var minutesToTrain = trainFrequency - timeApart;
+            console.log(minutesToTrain);
+
+            var arrivalTrain = moment().add(minutesToTrain, "minutes");
+            var arrivalTrainFormat = moment(arrivalTrain).format("HH:mm");
+            console.log(arrivalTrainFormat);
+
             // Train info
             console.log(trainName);
             console.log(destination);
@@ -37,7 +53,7 @@ function authenticate() {
 
             // Add each train's data into the table
             $("#train-table").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
-                trainFrequency + "</td><td>" + trainTime + "</td><td>" + "</td></tr>");
+                trainFrequency + "</td><td>" + trainTime + "</td><td>" + arrivalTrainFormat + "</td></tr>");
         });
     }).catch(function (error) {
         // Handle Errors here.
