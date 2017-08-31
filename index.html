@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <!--font-awesome  -->
     <script src="https://use.fontawesome.com/62f4e174f3.js"></script>
     <!--css  -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <!--Moment.js  -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div id="sign-in-authentication">
-            <button></button>Sign In
+    <div class="container-fluid" id="login-container">
+        <div class="g-signin2">
+            <div id="sign-in">
+                <button>Sign in</button>
+            </div>
         </div>
+    </div>
+    <div class="container-fluid" id="main-container">
         <div class="row">
             <div class="jumbotron">
                 <h1 class="text-center">Train-Timing
