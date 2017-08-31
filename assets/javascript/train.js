@@ -110,7 +110,7 @@ $("#add-train-button").on("click", function () {
     $("#add-train-input").val("");
     $("#add-destination-input").val("");
     $("#add-train-time-input").val("");
-    $("add-frequency-input").val("");
+    $("#add-frequency-input").val("");
 
 });
 
