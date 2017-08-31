@@ -29,22 +29,7 @@ function authenticate() {
             var trainTime = childSnapShot.val().time;
             var trainFrequency = childSnapShot.val().frequency;
 
-            // time calculation           
-            var beginTime = childSnapShot.val().trainTime;
-            var beginTimeFormat = moment(beginTime, "HH:mm");
-            var currentTime = moment();
-            // difference in time
-            var differenceTime = moment().diff(moment(beginTimeFormat), "minutes");
-            console.log(differenceTime);
-            var timeApart = differenceTime % trainFrequency;
-
-            var minutesToTrain = trainFrequency - timeApart;
-            console.log(minutesToTrain);
-
-            var arrivalTrain = moment().add(minutesToTrain, "minutes");
-            var arrivalTrainFormat = moment(arrivalTrain).format("HH:mm");
-            console.log(arrivalTrainFormat);
-
+           
             // Train info
             console.log(trainName);
             console.log(destination);
@@ -102,8 +87,26 @@ $("#add-train-button").on("click", function () {
     $("#add-train-time-input").val("");
     $("add-frequency-input").val("");
 });
+ function calculateTime(){
+     // time calculation           
+            var beginTime = childSnapShot.val().trainTime;
+            var beginTimeFormat = moment(beginTime, "HH:mm");
+            var currentTime = moment();
+            // difference in time
+            var differenceTime = moment().diff(moment(beginTimeFormat), "minutes");
+            console.log(differenceTime);
+            var timeApart = differenceTime % trainFrequency;
 
+            var minutesToTrain = trainFrequency - timeApart;
+            console.log(minutesToTrain);
+
+            var arrivalTrain = moment().add(minutesToTrain, "minutes");
+            var arrivalTrainFormat = moment(arrivalTrain).format("HH:mm");
+            console.log(arrivalTrainFormat);
+
+ }
 
 $(document).ready(function () {
     authenticate();
+    calculateTime();
 });
