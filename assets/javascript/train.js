@@ -79,6 +79,8 @@ function authenticate() {
         // The signed-in user info.
         var user = result.user;
         console.log(user);
+        $("#login-container").hide();
+        $("#main-container").show();
         // ...
     }).catch(function (error) {
         // Handle Errors here.
@@ -90,6 +92,8 @@ function authenticate() {
         var credential = error.credential;
         console.log(errorCode, errorMessage, email, credential);
         // ...
+        $("#login-container").show();
+        $("#main-container").hide();
     });
 }
 
