@@ -51,8 +51,8 @@ function onSignIn(googleUser) {
             // Sign in with credential from the Google user.
             firebase.auth().signInWithCredential(credential).then(function (user){
                 console.log("User logged in");
-                $("#login-container").show();
-                $("#main-container").hide();
+                $("#login-container").hide();
+                $("#main-container").show();
             }).catch(function (error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -62,11 +62,13 @@ function onSignIn(googleUser) {
                 // The firebase.auth.AuthCredential type that was used.
                 var credential = error.credential;
                 // ...
+                $("#login-container").show();
+                $("#main-container").hide();
             });
         } else {
             console.log('User already signed-in Firebase.');
-            $("#login-container").show();
-            $("#main-container").hide();
+            $("#login-container").hide();
+            $("#main-container").show();
         }
     });
 }
