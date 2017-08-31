@@ -101,10 +101,10 @@ $("#add-train-button").on("click", function () {
 });
 
 $(document).ready(function () {
-    $("#login-container").show();
-    $("#main-container").hide();
+    // $("#login-container").show();
+    $("#main-container").show();
     initialize();
-    authenticate();   
+    // authenticate();
     populateTable();
     setInterval(populateTable, 60000);
 });
