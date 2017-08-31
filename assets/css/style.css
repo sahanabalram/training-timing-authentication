@@ -4,6 +4,7 @@ body{
 }
 .jumbotron {
     background-color: tomato;
+    margin-top: 50px;
 }
 .btn-group-lg>.btn, .btn-lg {
     margin: 0 auto;
